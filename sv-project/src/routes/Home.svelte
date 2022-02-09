@@ -1,5 +1,6 @@
 <script>
     import Header from "../include/header.svelte";
+    import {img_url} from "../store";
     import Nav from "../include/nav.svelte";
     import Chart from 'chart.js/auto';
     import { onMount } from "svelte";
@@ -54,11 +55,11 @@
     <canvas id="myChart" style="width:100%; height:500px; background-color:#fff; float:left;"></canvas>
     <h1 class="d1_title">Seol Picture</h1>
     <div class="pic_wrap">
-        <img src="img/star.jpg" alt="">
+        <img src="{$img_url}star.jpg" alt="">
     </div>
     <h1 class="d1_title">Seol Mov</h1>
     <div class="pic_wrap">
-        <video id="player" src="img/01.mp4" on:click="{test}" controls></video>
+        <video id="player" src="{$img_url}01.mp4" on:click="{test}" controls></video>
     </div>
 </div>
 <style>

@@ -1,22 +1,23 @@
 <script>
     import {link,location} from 'svelte-spa-router'
+    import {img_url} from "../store";
     import active from 'svelte-spa-router/active';
     
     let color = "#40dc88";
     let cl = "";
-    let src = "img/visual01.jpg";
+    let src = $img_url+"visual01.jpg";
     if( $location === "/"){
         color = "#40dc88";
         cl = "mn";
-        src = "img/visual01.jpg";
+        src = $img_url+"visual01.jpg";
     }else if($location === "/about"){
         color = "plum";
         cl = "ab";
-        src = "img/visual02.jpg";
+        src = $img_url+"visual02.jpg";
     }else if($location === "/info"){
         color = "#40dc88";
         cl = "if";
-        src = "img/visual03.jpg";
+        src = $img_url+"visual03.jpg";
     }
     setTimeout(() => {
         document.getElementById("header_wrap").className += cl;

@@ -1,0 +1,79 @@
+*{padding:0; margin:0; transition:all 0.2s ease;}
+html, body {
+	position: relative;
+	width: 100%;
+}
+body {
+	color: #333;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Roboto Condensed ,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+#sv_wrap{width:100%; height:100%; float:left; position:relative;}
+.wrapper{width:100%; height:100%; float:left; position:relative;}
+.center_wrap{width:1280px; margin:0 auto; overflow:hidden; height:100%; position:relative;}
+.lnb li a.active{color:red !important;}
+header{width:100%; height:50px; background-color:pink; line-height:50px;transition: all 0.5s linear; position:absolute; left:0; top:0; z-index:100;}
+header.mn{background-color:rgb(255, 192, 203,0.5)}
+header.ab{background-color:rgb(221, 160, 221,0.5)}
+header.if{background-color:rgb(64, 220, 136,0.5)}
+.logo{position:absolute; left:20px; top:0;}
+.logo a{color:#fff;}
+.gnb_list{position:absolute; right:0; top:0;}
+.gnb_list li{float:left; list-style:circle; margin-left:20px; margin-right:10px;}
+.gnb_list li a{color:#999; }
+.gnb_list li a:hover{color:#000;}
+.gnb_list li a.active{color:#000;}
+.d1_title{width:100%; float:left; margin:80px 0; font-size:30px; opacity:0; transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
+.on .d1_title{opacity:1; margin:30px 0; transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);}

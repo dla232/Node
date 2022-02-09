@@ -98,6 +98,7 @@
                 labels: cn_name,
                 datasets: [
                     {
+                        type:"bar",
                         label: '신규확진자',
                         data: cn_cnt,
                         backgroundColor: [
@@ -109,6 +110,7 @@
                         borderWidth: 1
                     },
                     {
+                        type:"line",
                         label: '총확진자',
                         data: cn_cnt2,
                         backgroundColor: [
@@ -157,7 +159,7 @@
             <tbody>
                 {#each $apiData as items,i}
                 <tr>
-                    <td>{items.countryName}명</td>
+                    <td>{items.countryName}</td>
                     <td>{items.newCase}명</td>
                     <td>{items.totalCase}명</td>
                     <td>{items.recovered}명</td>
@@ -169,16 +171,19 @@
     </div>
 </div>
 <style>
+    :global(body) {
+        background-color:#000;
+    }
 :global(.title) {
     /* your styles go here */
     width:100%; float:left; margin-top:40px; font-size:30px;
 
 }
 button{color:#fff; background-color:rgb(36, 108, 175); border:0; width:100px;}
-.char_wrap{width:100%;float:left;}
+.char_wrap{width:100%;float:left; background-color:rgba(168, 139, 139, 0.8);}
 .center_wrap{width:1280px; margin:0 auto; position:relative; overflow:hidden;}
 .tb_wrap{width:100%; float:left; margin-bottom:100px;}
-.tb_wrap table{width:100%; float:left; border:1px solid #666; text-align: center; padding:0; margin:0; table-layout: fixed; border-collapse: collapse; border-spacing: 0;}
+.tb_wrap table{width:100%; float:left; border:1px solid #666; text-align: center; padding:0; margin:0; table-layout: fixed; border-collapse: collapse; border-spacing: 0; color:#fff;}
 .tb_wrap table tr th{line-height:50px; border-left:1px solid #666;}
 .tb_wrap table tr th:first-child{border-left:0;}
 .tb_wrap table tr td{border-top:1px solid #666; border-left:1px solid #666; line-height:30px;}

@@ -58,7 +58,7 @@
     </div>
     <h1 class="d1_title">Seol Mov</h1>
     <div class="pic_wrap">
-        <video id="player" src="img/02.mp4" on:click="{test}" controls></video>
+        <video id="player" src="img/01.mp4" on:click="{test}" controls></video>
     </div>
 </div>
 <style>

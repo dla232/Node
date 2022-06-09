@@ -4,22 +4,21 @@
     setTimeout(() => {
         document.getElementById("container").className += ' on';
     }, 0);
+    var a = "쪽";
 </script>
 <Header/>
 <Nav />
 <div class="center_wrap" id="container">
     <h1 class="d1_title">About</h1>
     <dl>
-        <dt></dt>
         <dd>Name : 임설</dd>
         <dd>BirthDay : 2018.02.22</dd>
-        <dd>Mother : 채경옥</dd>
+        <dd>Time : 12:32</dd>
         <dd>Father : 임관혁</dd>
-        <dd></dd>
+        <dd>Weight : 2.48Kg{a}11</dd>
     </dl>
 </div>
-
 <style>
-
     dl{width:100%; float:left; height:500px;}
+    dl dd{font-size:16px;}
 </style>

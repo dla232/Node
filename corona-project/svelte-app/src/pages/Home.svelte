@@ -171,13 +171,12 @@
     </div>
 </div>
 <style>
-    :global(body) {
-        background-color:#000;
-    }
+:global(body) {
+    background-color:#000;
+}
 :global(.title) {
     /* your styles go here */
     width:100%; float:left; margin-top:40px; font-size:30px;
-
 }
 button{color:#fff; background-color:rgb(36, 108, 175); border:0; width:100px;}
 .char_wrap{width:100%;float:left; background-color:rgba(168, 139, 139, 0.8);}

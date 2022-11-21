@@ -5,16 +5,24 @@
     import Nav from "../include/nav.svelte";
     setTimeout(() => {
         document.getElementById("container").className += ' on';
-    }, 0);
+        document.getElementById("TT").className += ' on';
+    }, 300);
     
 </script>
 <Header/>
 <Nav />
 <div class="center_wrap" id="container">
     <h1 class="d1_title">Info</h1>
-    <p>설이 사진</p>
-    <div>
-        <img src="{$img_url}img01.jpg" alt="">
-        <img src="{$img_url}img02.jpg" alt="">
+    <div class="img_wrap">
+        <img src="{$img_url}img01.jpg" alt="" />
+        <img src="{$img_url}img02.jpg" alt="" class="over_img" id="TT"/>
     </div>
+    <h1 class="d1_title">Weight</h1>
+    <p>12344</p>
 </div>
+
+
+<style>
+p{color:red;}
+
+</style>

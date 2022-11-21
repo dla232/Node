@@ -7,12 +7,12 @@
     onMount(function(){
         const ctx = document.getElementById("myChart");
         const myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
-                labels: ['18.02', '19.02', '20.02', '21.02', '22.02'],
+                labels: ['18.02', '19.02', '20.02', '21.02', '22.02','22.07','22.08','22.09','22.10','22.11'],
                 datasets: [{
                     label: '체중(Kg)',
-                    data: [2.48, 6, 11, 13, 15.5],
+                    data: [2.48, 6, 11, 13, 14.5 , 15.4, 16 , 16 , 17,18],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -59,7 +59,9 @@
     </div>
     <h1 class="d1_title">Seol Mov</h1>
     <div class="pic_wrap">
-        <video id="player" src="{$img_url}01.mp4" on:click="{test}" controls></video>
+        <video id="player" src="{$img_url}01.mp4" on:click="{test}" controls>
+            <track kind="captions"/>
+        </video>
     </div>
 </div>
 <style>

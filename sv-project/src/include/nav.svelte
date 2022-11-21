@@ -17,8 +17,8 @@
     ];
 </script>
 <style>
-nav{width:150px; position:absolute; left:0; top:50px; height:100%; background-color:plum;}
-nav ul{width:100%; float:left;}
+nav{width:150px; position:fixed; left:0; top:0; height:100%; background-color:plum;}
+nav ul{width:100%; float:left; margin-top:50px;}
 nav ul li{width:100%; float:left; border-bottom:1px solid #fff; text-align: center; line-height:50px;}
 nav ul li a{color:#fff;}
 </style>

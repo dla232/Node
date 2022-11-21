@@ -15,7 +15,8 @@
         <dd>BirthDay : 2018.02.22</dd>
         <dd>Time : 12:32</dd>
         <dd>Father : 임관혁</dd>
-        <dd>Weight : 2.48Kg{a}11</dd>
+        <dd>Weight : 2.48Kg</dd>
+        <dd>Star : </dd>
     </dl>
 </div>
 <style>

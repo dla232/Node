@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+ <meta charset="utf-8">
+ <title>drawlines</title>
+ <style>
+  canvas {border:5px solid black;}
+ </style>
+</head>
+<body>
+ <canvas id="canvas" width="600" height="400">
+  이 브라우저는 캔버스를 지원하지 않습니다.
+ </canvas>
+ <br>
+ 첫번째 점: <input id="jeom1"/>
+ <br>
+ 두번째 점: <input id="jeom2"/>
+ <br>
+ 세번째 점: <input id="jeom3"/>
+ <br>
+ 픽셀면적 : <input id="pixelmj"/>
+ <script>
+  var canvas;
+  var ctx;
+  var sx, sy;    // 드래그 시작점
+  var ex, ey;    // 드래그 끝점
+  var drawing;    // 그리고 있는 중인가
+  var backup;
+  var jc=0; //점의 카운트.
+  var jx01,jy01,jx02,jy02,jx03,jy03,jx04,jy04,jx05,jy05;
+  var a1 = document.getElementById("jeom1");
+  var a2 = document.getElementById("jeom2");
+  var a3 = document.getElementById("jeom3");
+  var pm = document.getElementById("pixelmj");
+  window.onload = function() {
+   canvas = document.getElementById("canvas");
+   if (canvas == null || canvas.getContext == null) return;
+   ctx = canvas.getContext("2d");
+   canvas.onmousedown = function(e) {
+    e.preventDefault();
+    // 시작 좌표 구함
+    sx = canvasX(e.clientX);
+    sy = canvasY(e.clientY);
+    jc=jc+1;
+    if(jc==1){
+     a1.value= "(" + sx + "," + sy + ")";
+     jx01 = sx;
+     jy01 = sy;
+     ctx.beginPath();
+     ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+     ctx.strokeStyle = "black";
+     ctx.lineWidth = 1;
+     ctx.stroke();
+     return jx01,jy01;
+    } else if(jc==2){
+     a2.value= "(" + sx + "," + sy + ")";
+     jx02 = sx;
+     jy02 = sy;
+	 
+     ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+     ctx.strokeStyle = "black";
+     ctx.lineWidth = 1;
+	 ctx.beginPath();
+	 ctx.moveTo(jx01,jy01);
+     ctx.lineTo(jx02,jy02);
+     ctx.closePath();
+	 ctx.stroke();
+    } else if(jc==3){
+     a3.value= "(" + sx + "," + sy + ")";
+     jx03 = sx;
+     jy03 = sy;
+	 
+     ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+     ctx.strokeStyle = "black";
+     ctx.lineWidth = 1;
+     
+	 ctx.beginPath();
+	 ctx.moveTo(jx02,jy02);
+     ctx.lineTo(jx03,jy03);
+     ctx.closePath();
+	 ctx.stroke();
+     //삼각형그리기
+    } else if(jc==4){
+     jx04 = sx;
+     jy04 = sy;
+	 
+     ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+     ctx.strokeStyle = "black";
+     ctx.lineWidth = 1;
+	 ctx.beginPath();
+	 ctx.moveTo(jx03,jy03);
+     ctx.lineTo(jx04,jy04);
+     ctx.closePath();
+     ctx.stroke();
+     //삼각형그리기
+    } else if(jc==5){
+     jx05 = sx;
+     jy05 = sy;
+	 
+     ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+     ctx.strokeStyle = "black";
+     ctx.lineWidth = 1;
+	 ctx.beginPath();
+	 ctx.moveTo(jx04,jy04);
+     ctx.lineTo(jx05,jy05);
+     ctx.closePath();
+     ctx.stroke();
+     //삼각형그리기
+    } else {
+     //alert("jx01:"+jx01+"\t   jy01:"+jy01+"\njx02:"+jx02+"\t   jy02:"+jy02+"\njx03:"+jx03+"\t   jy03:"+jy03);
+     /*ctx.beginPath();
+     ctx.moveTo(jx01,jy01);
+     ctx.lineTo(jx02,jy02);
+     ctx.lineTo(jx03,jy03);
+     ctx.lineTo(jx04,jy04);
+     ctx.lineTo(jx05,jy05);
+     ctx.closePath();
+	 ctx.stroke();*/
+     //ctx.fillStyle="#2694A3";
+     //ctx.fill();
+     drawing = false;
+    }
+   }
+   canvas.onmouseup = function(e) {
+    drawing = false;
+   }   
+  }
+  /*var selcolor = document.getElementById("selcolor");
+  selcolor.onchange = function(e) {
+   ctx.strokeStyle = selcolor.value;
+  }*/
+  function canvasX(clientX) {
+   var bound = canvas.getBoundingClientRect();
+   var bw = 5;
+   return (clientX - bound.left - bw) * (canvas.width / (bound.width - bw * 2));
+  }
+  function canvasY(clientY) {
+   var bound = canvas.getBoundingClientRect();
+   var bw = 5;
+   return (clientY - bound.top - bw) * (canvas.height / (bound.height - bw * 2));
+  }
+  function nomalize(x0,y0,x1,y1,x2,y2){
+   var nx1 = x1-x0;
+   var ny1 = y1-y0;
+   var nx2 = x2-x0;
+   var ny2 = y2-y0;
+   var aaa = (nx1*ny2)-(nx2*ny1);
+   var bbb = Math.abs(aaa);
+   var ccc = bbb/2;
+   var ddd = bbb%2;
+   return ccc+ddd;
+  }
+ </script>
+</body>
+</html>
+
+

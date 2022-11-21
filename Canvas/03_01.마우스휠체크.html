@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>canvasexample</title>
+	<style>
+		#wrap{width:100%; height:5000px;}
+		canvas {border:5px solid magenta; position:fixed; left:0; top:0;}
+	</style>
+</head>
+<body>
+<div id="wrap"></div>
+	<canvas id="canvas" width="1458" height="820">
+		이 브라우저는 캔버스를 지원하지 않습니다.
+	</canvas>
+	<script>
+		var motion_section = 0;
+		var a_m = [131,68];
+		var s_url = ["02-head-bob-turn","07-flip-reveal-guts"]
+		var canvas;
+		var ctx;
+		var idx = -1;
+		var base_url = "https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/";
+		window.onload = function() {
+			canvas = document.getElementById("canvas");
+			if (canvas == null || canvas.getContext == null) return;
+			ctx = canvas.getContext("2d");
+			draw();
+		}
+		window.onkeypress = function(){
+			
+		}
+		function draw() {
+			ctx.strokeRect(10,10,100,100);
+		}
+		function draw2(i){
+			if(i < 10){
+				i = "000"+i;
+			}else if(i < 100){
+				i = "00"+i;
+			}else if(i < 1000){
+				i = "0"+i;
+			}
+			var imgClo = new Image();
+			imgClo.addEventListener('load', function(){
+				var ctx = document.getElementById('canvas').getContext("2d");
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				// 컨텍스트 리셋
+				ctx.beginPath();
+				ctx.drawImage( imgClo , 0, 0, canvas.width, canvas.height);
+			},false);
+			imgClo.src=base_url+s_url[motion_section]+"/"+i+".jpg";
+		}
+//		document.getElementById("canvas").onmousewheel = function(event){
+		var const_top = 0;
+		window.onscroll = function(event){
+			var a = document.documentElement.scrollTop;
+			if(const_top < a){
+				if(idx <= a_m[motion_section]){
+					idx = idx + 1;
+				}else{
+					motion_section = motion_section + 1;
+					idx = -1;
+				}
+			}else{
+				if(idx <= 0){
+					idx = 0;
+				}else{
+					idx = idx - 1;
+				}
+			}
+			const_top = a;
+			console.log(a);
+			//draw2(idx);
+			//if (event.deltaY < 0){
+				//휠 위쪽
+			//	idx = idx - 1;
+			//}else{
+				//휠 아래
+			//	idx = idx + 1;
+			//}
+			console.log(idx);
+			draw2(idx);
+			event.preventDefault();
+			return false;
+		};
+	</script>
+</body>
+</html>

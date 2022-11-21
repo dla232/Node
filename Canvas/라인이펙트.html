@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>line Effect</title>
+	<style>
+	.center{width:1280px; margin:0 auto;}
+		canvas {width:100%; margin:0 auto; height:640px; border:1px solid pink; float:left;}
+	</style>
+</head>
+<body>
+	<div class="center">
+		<canvas id="canvas" width="1280" height="640">
+			이 브라우저는 캔버스를 지원하지 않습니다.
+		</canvas>
+	</div>
+	<script>
+		var canvas;
+		var ctx;
+		var set_inter;
+		var set_inter2;
+		var set_inter3;
+		var set_inter4;
+		var set_inter5;
+		var set_inter6;
+		var set_inter7;
+		var set_inter8;
+		var set_inter9;
+		var set_inter10;
+		var set_inter11;
+		var set_inter12;
+		var set_inter13;
+		window.onload = function() {
+			canvas = document.getElementById("canvas");
+			if (canvas == null || canvas.getContext == null) return;
+			ctx = canvas.getContext("2d");
+			set_inter = setInterval(draw,1);
+		}
+		var i = 233;
+		function draw() {
+			i = i + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(277, 223); //초기 시작점 위치 x,y좌표
+			ctx.lineTo(277, i); //움직여질 끝점 x,y좌표
+			ctx.strokeStyle = "blue";
+			ctx.lineWidth = 12;
+			ctx.stroke();
+			if(i > 375){
+				clearInterval(set_inter);
+				set_inter2 = setInterval(draw2,0);
+			}
+		}
+		var i2 = 277;
+		var i3 = 233;
+		function draw2(){
+			i2 = i2 + 2;
+			i3 = i3 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(277, 223);
+			ctx.lineTo(i2, i3);
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.stroke();
+			if(i3 > 374){
+				i3 = 374;
+				console.log(i2);
+				clearInterval(set_inter2);
+				set_inter3 = setInterval(draw3,0);
+			}
+		}
+		function draw3() {
+			i = i - 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(419, 374); //초기 시작점 위치 x,y좌표
+			ctx.lineTo(419, i); //움직여질 끝점 x,y좌표
+			ctx.strokeStyle = "red";
+			ctx.lineWidth = 12;
+			ctx.stroke();
+			if(i < 223){
+				clearInterval(set_inter3);
+				set_inter4 = setInterval(draw4,0);
+			}
+		}
+		var i4 = 450;
+		function draw4() {
+			i4 = i4 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(450, 221); //초기 시작점 위치 x,y좌표
+			ctx.lineTo(i4, 221); //움직여질 끝점 x,y좌표
+			ctx.stroke();
+			if(i4 > 601){
+				clearInterval(set_inter4);
+				set_inter5 = setInterval(draw5,0);
+			}
+		}
+		var i5 = 450;
+		function draw5(){
+			i5 = i5 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(450, 296);
+			ctx.lineTo(i5, 296); //움직여질 끝점 x,y좌표
+			ctx.stroke();
+			if(i5 > 601){
+				clearInterval(set_inter5);
+				set_inter6 = setInterval(draw6,0);
+			}
+		}
+		var i6 = 221;
+		function draw6(){
+			i6 = i6 + 2;
+			ctx.beginPath();
+			//ctx.clearLine(0, 0, canvas.width, canvas.height);
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(450, 221);
+			ctx.lineTo(450, i6); //움직여질 끝점 x,y좌표
+			ctx.stroke();
+			if(i6 > 374){
+				clearInterval(set_inter6);
+				set_inter7 = setInterval(draw7,0);
+			}
+		}
+		var i7 = 450;
+		function draw7(){
+			i7 = i7 + 2;
+			ctx.beginPath();
+			//ctx.clearLine(0, 0, canvas.width, canvas.height);
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(450, 374);
+			ctx.lineTo(i7, 374); //움직여질 끝점 x,y좌표
+			ctx.stroke();
+			if(i7 > 601){
+				clearInterval(set_inter7);
+				set_inter8 = setInterval(draw8,0);
+			}
+
+		}
+		var i8 = 632;
+		var i9 = 221;
+		function draw8(){
+			i8 = i8 + 2;
+			i9 = i9 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(632, 221);
+			ctx.lineTo(i8, i9); //움직여질 끝점 x,y좌표
+			if(i8 > 785){
+				clearInterval(set_inter8);
+				set_inter9 = setInterval(draw9,0);
+				i9 = 221;
+			}
+			ctx.stroke();
+		}
+		function draw9(){
+			i8 = i8 - 2;
+			i9 = i9 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.moveTo(785, 221);
+			ctx.lineTo(i8, i9); //움직여질 끝점 x,y좌표
+			if(i8 < 632){
+				clearInterval(set_inter9);
+				set_inter10 = setInterval(draw10,0);
+			}
+			ctx.stroke();
+		}
+		var arc_i = 0.01;
+		function draw10() {
+			arc_i = arc_i + 0.02;
+			//Math.PI = 원주율 3.14
+			ctx.beginPath();
+			ctx.lineWidth = 12;
+			ctx.strokeStyle = "#333";
+			ctx.fillStyle = "red";
+			ctx.arc(906,304,90, 0 , arc_i * Math.PI);
+			if(arc_i > 2){
+				clearInterval(set_inter10);
+				set_inter11 = setInterval(draw11,0);
+				ctx.fill();
+				
+			}
+			ctx.stroke();
+		}
+		var i10 = 233;
+		function draw11() {
+			i10 = i10 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(1027, 223); //초기 시작점 위치 x,y좌표
+			ctx.lineTo(1027, i10); //움직여질 끝점 x,y좌표
+			ctx.strokeStyle = "red";
+			ctx.lineWidth = 12;
+			if(i10 > 375){
+				clearInterval(set_inter11);
+				set_inter12 = setInterval(draw12,0);
+			}
+			ctx.stroke();
+		}
+		var i11 = 1027;
+		var i12 = 233;
+		function draw12(){
+			i11 = i11 + 2;
+			i12 = i12 + 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(1027, 223);
+			
+			ctx.lineTo(i11, i12);
+			ctx.strokeStyle = "#000";
+			ctx.lineWidth = 12;
+			ctx.stroke();
+			if(i12 > 374){
+				i12 = 374;
+				clearInterval(set_inter12);
+				set_inter13 = setInterval(draw13,0);
+				
+			}
+		}
+		function draw13() {
+			i10 = i10 - 2;
+			ctx.beginPath();
+			ctx.lineCap="round";
+			ctx.moveTo(1169, 374); //초기 시작점 위치 x,y좌표
+			ctx.lineTo(1169, i10); //움직여질 끝점 x,y좌표
+			ctx.strokeStyle = "blue";
+			ctx.lineWidth = 12;
+			ctx.stroke();
+			if(i10 < 223){
+				clearInterval(set_inter13);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -16,7 +16,7 @@
         <dd>Time : 12:32</dd>
         <dd>Father : 임관혁</dd>
         <dd>Weight : 2.48Kg</dd>
-        <dd>Star : </dd>
+        <dd>Star : {a}</dd>
     </dl>
 </div>
 <style>

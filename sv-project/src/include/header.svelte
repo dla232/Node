@@ -26,7 +26,7 @@
 </script>
 
 <header id="header_wrap" >
-<!--     
+    <!--     
     {#if $location === "/"}
     메인
     {:else if $location === "/about"}
@@ -35,7 +35,8 @@
     Info페이지
     {:else}
     오류 없는 페이지
-    {/if} -->
+    {/if} 
+    -->
     <h1 class="logo"><a href="/">IM SEOL</a></h1>
     <div class="center_wrap">
         

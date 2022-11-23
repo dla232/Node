@@ -13,6 +13,10 @@
         {
             url : "/info",
             path : "Info",
+        },
+        {
+            url : "/canvas",
+            path : "Canvas",
         }
     ];
 </script>

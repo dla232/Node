@@ -204,14 +204,10 @@
         <img src="{$img_url}img02.jpg" alt="" class="over_img" id="TT"/>
     </div>
     <h1 class="d1_title">Weight</h1>
-    <p>12344</p>
     <canvas id="canvas" width="1000" height="800" style="background-color:#000">
 		이 브라우저는 캔버스를 지원하지 않습니다.
 	</canvas>
 </div>
-
-
 <style>
 p{color:red;}
-
 </style>

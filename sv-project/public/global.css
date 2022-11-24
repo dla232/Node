@@ -64,7 +64,7 @@ button:focus {
 .wrapper{width:100%; height:100%; float:left; position:relative;}
 .center_wrap{width:1280px; margin:0 auto; overflow:hidden; height:100%; position:relative;}
 .lnb li a.active{color:red !important;}
-header{width:100%; height:50px; background-color:pink; line-height:50px;transition: all 0.5s linear; position:absolute; left:0; top:0; z-index:100;}
+header{width:100%; height:50px; background-color:pink; line-height:50px;transition: all 0.5s linear; position:fixed; left:0; top:0; z-index:100;}
 header.mn{background-color:rgb(255, 192, 203,0.5)}
 header.ab{background-color:rgb(221, 160, 221,0.5)}
 header.if{background-color:rgb(64, 220, 136,0.5)}

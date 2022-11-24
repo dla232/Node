@@ -8,5 +8,5 @@
 <audio src="https://ssl.nexon.com/s2/Game/Maplestory/maple2013/mp3/FloralLife.mp3" controls></audio>
 <Router {routes} />
 <style>
-	audio{height:30px; position:absolute; left:50%; top:10px; z-index:1000; transform:translateX(-50%)}
+	audio{height:30px; position:fixed; left:50%; top:10px; z-index:1000; transform:translateX(-50%);}
 </style>

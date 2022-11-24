@@ -18,6 +18,11 @@
         color = "#40dc88";
         cl = "if";
         src = $img_url+"visual03.jpg";
+    }else if($location === "/canvas"){
+        color = "#40dc00";
+        cl = "if";
+        src = $img_url+"visual02.jpg";
+
     }
     setTimeout(() => {
         document.getElementById("header_wrap").className += cl;
@@ -44,6 +49,7 @@
             <li><a href="/" use:link use:active>Home</a></li>
             <li><a href="/about" use:link use:active>About</a></li>
             <li><a href="/info" use:link use:active>Info</a></li>
+            <li><a href="/Canvas" use:link use:active>Canvas</a></li>
         </ul>
     </div>
 </header>

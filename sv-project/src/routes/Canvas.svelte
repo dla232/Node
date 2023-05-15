@@ -225,6 +225,7 @@
 <Header/>
 <Nav />
 <div class="center_wrap" id="container">
+    <h1>Canvas Study</h1>
     <h1 class="d1_title">BounceBox</h1>
     <canvas id="canvas2" width="1278" height="800" style="border:1px solid #333;">
 		이 브라우저는 캔버스를 지원하지 않습니다.
@@ -237,5 +238,7 @@
     
 </div>
 <style>
+    h1{width:100%; float:left; margin-top:10px; margin-bottom:10px; border-bottom:1px solid #333; padding-bottom:10px;}
+    .d1_title{border-bottom:0; margin-bottom:0;}
 p{color:red;}
 </style>

@@ -122,6 +122,12 @@
             <td>JSP / CSS / JavaScript</td>
         </tr>
         <tr>
+            <td>강아지 대통령</td>
+            <td>강아지 대통령 홈페이지 리뉴얼 / 모바일 신규 구축</td>
+            <td>애견 용품 CMS 연동 / 모바일 신규 구축</td>
+            <td>PHP / CSS / JavaScript</td>
+        </tr>
+        <tr>
             <td>메이플스토리</td>
             <td>메이플 스토리 홈페이지 리뉴얼 / 프로모션 페이지 작업</td>
             <td>홈페이지 리뉴얼 / 해당 게임 프로모션 풀페이지 및 유지보수</td>

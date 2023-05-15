@@ -4,7 +4,7 @@ var sha256 = require('sha256');
 var sql = require('mssql');
 var config = {
     user: 'node_user',
-    password: 'ruddhr486*',
+    password: '*********',
     server: '10.10.53.166',
     database: 'node_db',
 	port:1433,

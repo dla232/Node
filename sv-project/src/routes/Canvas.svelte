@@ -38,9 +38,9 @@
         canvas2 = document.getElementById("canvas2");
         if (canvas2 == null || canvas2.getContext == null) return;
         ctx2 = canvas2.getContext("2d");
-        ctx2.fillStyle="blue";
+        ctx2.fillStyle="pink";
         ctx2.lineWidth=2;
-        ctx2.strokeStyle="pink"
+        ctx2.strokeStyle="red"
         setInterval(draw2, 25);
     }
     function draw2() {

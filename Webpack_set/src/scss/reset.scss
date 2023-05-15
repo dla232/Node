@@ -1,0 +1,72 @@
+/* reset */
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, select, button, table, em {
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+header, article, aside, details, figcaption, figure, footer, hgroup, menu, nav, section, ::before, ::after {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+img, fieldset {
+  border: 0;
+  vertical-align: top;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+em, address {
+  font-style: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+html {
+  min-width: 1263px;
+  -webkit-text-size-adjust: none;
+}
+
+.blind, legend, caption {
+  position: absolute;
+  left: -1000%;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -10000px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  vertical-align: top;
+  background: transparent;
+}
+
+button:focus {
+  outline: none;
+}

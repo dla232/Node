@@ -1,0 +1,41 @@
+<%include head.ejs%>
+<div class="con_wrap">
+    <h1><%= title %></h1>
+    <h2>Data Base List 확인</h2>
+
+    <p style="float:left; margin-top:10px; font-size:20px;">Node Test Page By <%= name%> </p>
+    <p style="float:left; margin-top:20px; color:#333; width:100%;">시간 : <%=data2%></p>
+    <table class="board_list" style="float:left; margin-top:30px;">
+        <colgourp>
+            <col width="33%"></col>
+            <col width="33%"></col>
+            <col width="*"></col>
+        </colgourp>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>이름</th>
+                <th>가입날짜</th>
+                <th>암호</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+          for(var i = 0; i < row.length; i++){
+          var d = row[i].date;
+          d = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        %>
+            <tr>
+                <td><%=row[i].user_id%></td>
+                <td><%=row[i].user_name%></td>
+                <td><%=d%></td>
+                <td>비밀</td>
+            </tr>
+        <%
+        }
+        %>
+        </tbody>
+    </table>
+    <p style="margin-top:10px; float:left; width:100px; height:30px; border-radius:20px; background-color:blue; color:#fff; line-height:30px; text-align:center;"><a href="/write" style="color:#fff;">가입하기</a></p>
+</div>
+<%include foot.ejs%>

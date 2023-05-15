@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>메이플스토리 - 2023 SUMMER SHOWCASE NEW AGE</title>
+    <meta property="og:site_name" content="[메이플스토리] 2023 SUMMER SHOWCASE NEW AGE">
+    <meta property="og:title" content="[메이플스토리] 2023 SUMMER SHOWCASE NEW AGE">
+    <meta property="og:description" content="메이플스토리의 2023년 여름 업데이트 소식을 가장 빠르게 만나볼 수 있는 NEW AGE 쇼케이스에 용사님들을 초대합니다.">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" href="https://lwres.nexon.com/css/maplestory/jquery.mCustomScrollbar.css" />
+    <script src="https://lwres.nexon.com/js/maplestory/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://lwres.nexon.com/js/maplestory/jquery.mCustomScrollbar.concat.min.js" ></script>
+    <script type="text/javascript" src="poster.js" ></script>
+    <script type="text/javascript" src="video.js" ></script>
+    <style>
+    @font-face {
+        font-family: 'NEXONLv1Gothic';
+        src: url(font/NEXONLv1Gothic.eot);
+        src: url(font/NEXONLv1Gothic.eot?#iefix) format('embedded-opentype'), url(font/NEXONLv1Gothic.woff) format('woff'), url(font/NEXONLv1Gothic.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'NEXONLv1GothicBold';
+        src: url(font/NEXONLv1GothicBold.eot);
+        src: url(font/NEXONLv1GothicBold.eot?#iefix) format('embedded-opentype'), url(font/NEXONLv1GothicBold.woff) format('woff'), url(font/NEXONLv1GothicBold.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'NEXONLv1GothicLight';
+        src: url(font/NEXONLv1GothicLight.eot);
+        src: url(font/NEXONLv1GothicLight.eot?#iefix) format('embedded-opentype'), url(font/NEXONLv1GothicLight.woff) format('woff'), url(font/NEXONLv1GothicLight.ttf) format('truetype');
+    }  
+    </style>
+    <script>
+        $(function(){
+            creat_poster_list();
+            creat_video_list();
+            setTimeout(function(){
+                $(".intro_wrap").addClass("load");
+                $('#screen').fadeOut(500);
+            },300);
+        });
+        $(window).load(function(){
+            $(window).resize(function(){
+            });
+        });
+
+
+
+		$(document).ready(function () {
+    $(".lnb_btn").click(function(){
+       $(".lnb_wrap").toggleClass("on");
+    });
+    $(window).scroll(function(){
+        var s_top = $(this).scrollTop();
+        var sec01 = $("#sec01").offset().top;
+        var sec02 = $("#sec02").offset().top-300;
+        var sec03 = $("#sec03").offset().top-300;
+        if(s_top > 63){
+            $(".lnb_wrap").css("top","0px");
+            $(".gnb_wrap").css("top","25px");
+        }else{
+            $(".lnb_wrap").css("top",63-s_top+"px");
+            $(".gnb_wrap").css("top",63-s_top+25+"px");
+        }
+        if(s_top >= 0 && s_top < sec02){
+            $(".q_menu li").eq(0).find("a").mouseover();
+            $(".q_menu li").eq(0).find("a").addClass("active");
+            $(".q_menu li").eq(0).siblings().find("a").removeClass("active");
+            $(".q_menu li").eq(0).siblings().find("a").mouseout();
+            $(".intro_wrap").addClass("load");
+            $(".tab_container").removeClass("load");
+            $(".media_wrap").removeClass("load");
+        }else if(s_top >= sec02 && s_top < sec03){
+            $(".q_menu li").eq(1).find("a").mouseover();
+            $(".q_menu li").eq(1).find("a").addClass("active");
+            $(".q_menu li").eq(1).siblings().find("a").removeClass("active");
+            $(".q_menu li").eq(1).siblings().find("a").mouseout();
+            $(".intro_wrap").removeClass("load");
+            $(".tab_container").addClass("load");
+            $(".media_wrap").removeClass("load");
+        }else{
+            $(".q_menu li").eq(2).find("a").mouseover();
+            $(".q_menu li").eq(2).find("a").addClass("active");
+            $(".q_menu li").eq(2).siblings().find("a").removeClass("active");
+            $(".q_menu li").eq(2).siblings().find("a").mouseout();
+            $(".intro_wrap").removeClass("load");
+            $(".tab_container").removeClass("load");
+            $(".media_wrap").addClass("load");
+            
+        }
+    });
+}); //_ready
+
+function ch_png_on(e){
+	var a = $(e).find("img");
+	var src = $(e).find("img").attr("src");
+	var cl = $(e).attr("class"); 
+	if(cl != "active"){
+		var src_new = src.replace("_off.png","_on.png");
+		a.attr("src",src_new);
+	}
+}
+function ch_png_off(e){
+	var a = $(e).find("img");
+	var src = $(e).find("img").attr("src");
+	var cl = $(e).attr("class");
+	if(cl != "active"){
+		var src_new = src.replace("_on.png","_off.png");
+		a.attr("src",src_new);
+	}
+}
+
+
+function random(n1, n2){
+  n1 = parseInt(n1);
+  n2 = parseInt(n2);
+  return Math.floor( Math.random() * (n2 - n1 + 1) ) + n1;
+}
+function chg_tab(i){
+    for(var j = 1; j < 4; j++){
+        if(i == j){
+           $(".tab0"+j+"_con").show();
+        }else{
+           $(".tab0"+j+"_con").hide();
+        }
+    }
+    $(".tab_wrap li").eq(i-1).find("a").mouseover();
+    $(".tab_wrap li").eq(i-1).find("a").addClass("active");
+    $(".tab_wrap li").eq(i-1).siblings().find("a").removeClass("active");
+    $(".tab_wrap li").eq(i-1).siblings().find("a").mouseout();
+}
+
+
+function creat_poster_list(){
+    var poster_len = Object.keys(poster).length;
+    var poster_html = "";
+    for(var i = 0; i < poster_len; i++){
+        var poster_obj = Object.keys(poster)[i];
+        console.log(poster[poster_obj][0].img_src);
+        if(poster[poster_obj][0].img_src == ""){
+            var img_src = "img/none_poster.png";
+            poster_html = poster_html + '<li class="none"><dl><dt><img src="'+img_src+'" alt=""></dt><dd>'+poster[poster_obj][0].txt+'</dd></dl></li>';
+        }else{
+            var img_src = poster[poster_obj][0].img_src;
+            poster_html = poster_html + '<li><dl><dt><img src="'+img_src+'" alt=""><span><a href="#a" onclick="open_poster(\''+poster[poster_obj][0].pop_img+'\',\''+poster[poster_obj][0].txt+'\')" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/more_off.png" alt=""></a></span></dt><dd><a href="#a" onclick="open_poster(\''+poster[poster_obj][0].pop_img+'\',\''+poster[poster_obj][0].txt+'\')">'+poster[poster_obj][0].txt+'</a></dd></dl></li>';
+        }
+    }
+    $(".poster_wrap").html(poster_html);
+}
+
+
+function open_poster(i,j){
+    $(".poster_pop").attr("style","display:flex");
+    var h = $(window).height();
+    console.log(i);
+    console.log(j);
+    $(".poster_pop > div").height(h-310);
+    $(".poster_con h1").text(j);
+    $(".poster_con .pop_p_img img").attr("src",i);
+}
+function close_poster(){
+    $(".poster_pop").attr("style","display:none");
+    
+}
+
+
+
+
+function creat_video_list(){
+    var video_len = Object.keys(video_data).length;
+    var video_html = "";
+    for(var i = 0; i < video_len; i++){
+        var video_obj = Object.keys(video_data)[i];
+        console.log(video_data[video_obj][0].img_src);
+        if(video_data[video_obj][0].img_src == ""){
+            var img_src = "img/none_video.png";
+            video_html = video_html + '<li class="none"><dl><dt><img src="'+img_src+'" alt=""></dt><dd>'+video_data[video_obj][0].txt+'</dd></dl></li>';
+        }else{
+            var img_src = video_data[video_obj][0].img_src;
+            video_html = video_html + '<li><dl><dt><img src="'+img_src+'" alt=""><span><a href="#a" onclick="open_video(\''+video_data[video_obj][0].v_url+'\',\''+video_data[video_obj][0].txt+'\')" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/play_off.png" alt=""></a></span></dt><dd><a href="#a" onclick="open_video(\''+video_data[video_obj][0].v_url+'\',\''+video_data[video_obj][0].txt+'\')">'+video_data[video_obj][0].txt+'</a></dd></dl></li>';
+        }
+    }
+    $(".video_wrap").html(video_html);
+}
+
+
+
+
+
+function open_video(i,j){
+    $(".video_pop").attr("style","display:flex");
+    $(".video_con h1").text(j);
+    $(".v_wrap iframe").attr("src",i);
+}
+function close_video(){
+    $(".video_pop").attr("style","display:none");
+    $(".v_wrap iframe").attr("src","");
+}
+
+
+function open_tab03(){
+    $(".tab03_pop_wrap").show();
+}
+function close_tab03(){
+    $(".tab03_pop_wrap").hide();
+    
+}
+
+function open_alert(){
+    $(".alert_pop").show();
+}
+function close_alert(){
+    $(".alert_pop").hide();
+}
+    </script>
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="https://rs.nxfs.nexon.com/common/js/gnb.min.js" data-gamecode="589824" data-ispublicbanner="true"></script>
+    <div class="gnb_wrap">
+        <div>
+            <ul>
+                <li><a href="/Home/Main" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/gnb01_off.png" alt=""></a></li>
+                <li><a href="https://www.youtube.com/c/MapleStoryKR" target="_blank" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/gnb02_off.png" alt=""></a></li>
+                <li><a href="https://www.instagram.com/pink_pinkbean" target="_blank" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/gnb03_off.png" alt=""></a></li>
+            </ul>
+            <span class="not_today"><a href="#a"><img src="img/not_today.png" alt=""></a></span>
+        </div>
+    </div>
+    <div id="wrap">
+        <div class="intro_wrap" id="sec01">
+            <div class="star_wrap">
+                <div class="star_con">
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                </div>
+            </div>
+            <div class="center_wrap">
+                <span class="ms01"><img src="img/ms01.png" alt=""></span>
+                <span class="ms02"><img src="img/ms02.png" alt=""></span>
+                <span class="right_ef"><img src="img/effect01.png" alt=""></span>
+                <span class="left_ef"><img src="img/effect02.png" alt=""></span>
+                <span class="l_txt"><img src="img/l_txt.png" alt=""></span>
+                <span class="r_txt"><img src="img/r_txt.png" alt=""></span>
+                <span class="intro_title"><img src="img/intro_title.png" alt=""></span>
+                <span class="ttl"><img src="img/tt_l.png" alt=""></span>
+                <span class="sub_tt"></span>
+                <span class="ttr"><img src="img/tt_r.png" alt=""></span>
+                <div class="mv_wrap">
+                    <iframe src="https://naver.com" frameborder="0"></iframe>
+                </div>
+                <span class="i_btn"><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" onclick="open_alert()"><img src="img/wft/i_btn_off.png" alt=""></a></span>
+                <span class="s_txt"><img src="img/s_txt.png" alt=""></span>
+            </div>
+        </div>
+        <div class="tab_container" id="sec02">
+            <ul class="tab_wrap">
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" onclick="chg_tab(1)" class="active"><img src="img/wft/tab01_on.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" onclick="chg_tab(2)"><img src="img/wft/tab02_off.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" onclick="chg_tab(3)"><img src="img/wft/tab03_off.png" alt=""></a></li>
+            </ul>
+            <span class="char01"><img src="img/char01.png" alt=""></span>
+            <div class="tab01_con">
+                <div class="center_wrap">
+                    <img src="img/tab_con01.png" alt="" class="tab_con">
+                </div>
+            </div>
+            <div class="tab02_con">
+                <div class="center_wrap">
+                    <img src="img/tab_con02.png" alt="" class="tab_con">
+                </div>
+            </div>
+            <div class="tab03_con">
+                <div class="center_wrap">
+                    <img src="img/tab_con03.png" alt="" class="tab_con">
+                    <span class="btn01"><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" onclick="open_alert()"><img src="img/wft/tab03_btn01_off.png" alt=""></a></span>
+                    <span class="btn02"><a href="#a" onclick="open_tab03();" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/tab03_btn02_off.png" alt=""></a></span>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="media_wrap" id="sec03">
+            <div class="center_wrap">
+                <span class="char02"><img src="img/char02.png" alt=""></span>
+                <span class="media_tt"><img src="img/media_tt.png" alt=""></span>
+                <span class="media_sub_tt01"></span>
+                <span class="media_sub_tt02"></span>
+                <ul class="poster_wrap">
+                </ul>
+                <ul class="video_wrap">
+                </ul>
+            </div>
+        </div>
+	</div>
+	<!--공통 LNB : Str-->
+    <div class="lnb_wrap on">
+        <div class="lnb_con">
+            <h1><a href="#a"><img src="https://lwi.nexon.com/maplestory/2023/0405_09EABAC000E2F15D/lnb_logo_wft_108384bfca161b8705718a6f0bf0bd20.png" alt=""></a></h1>
+            <ul>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="https://lwi.nexon.com/maplestory/2023/0420_partyquest_C9ADB4CCBDD351C1/exception/lnb_menu01_off.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="https://lwi.nexon.com/maplestory/2023/0420_partyquest_C9ADB4CCBDD351C1/exception/lnb_menu02_off.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="https://lwi.nexon.com/maplestory/2023/0420_partyquest_C9ADB4CCBDD351C1/exception/lnb_menu03_off.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="https://lwi.nexon.com/maplestory/2023/0420_partyquest_C9ADB4CCBDD351C1/exception/lnb_menu04_off.png" alt=""></a></li>
+                <li><a href="#a" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" class="active"><img src="img/wft/lnb_menu05_on.png" alt=""></a></li>
+            </ul>
+            <span class="lnb_btn"><a href="#a"></a></span>
+        </div>
+    </div>
+    <!--공통 LNB : End-->
+    <span id="screen"></span>
+    <div class="poster_pop">
+        <div>
+            <div class="poster_con">
+                <h1></h1>
+                <div class="pop_p_img"><img src="img/pop_poster01.png" alt=""></div>
+                <span class="close_pop"><a href="#a" onclick="close_poster()"><img src="img/pop_close.png" alt=""></a></span>
+            </div>
+        </div>
+    </div>
+    <div class="video_pop">
+        <div>
+            <div class="video_con">
+                <h1></h1>
+                <div class="v_wrap">
+					<iframe src="" frameborder="0"></iframe>
+                </div>
+                <span class="close_pop"><a href="#a" onclick="close_video()"><img src="img/pop_close.png" alt=""></a></span>
+            </div>
+        </div>
+    </div>
+    <div class="tab03_pop_wrap">
+        <div>
+            <div class="tab03_pop">
+                <span><a href="#a" onclick="close_tab03()"><img src="img/pop_close.png" alt=""></a></span>
+            </div>
+        </div>
+    </div>
+    <div class="alert_pop">
+        <div>
+            <div class="alert_con">
+                <span class="alert_btn"><a href="#a" onclick="close_alert()"><img src="img/alert_btn.png" alt=""></a></span>
+                <span class="close_pop"><a href="#a" onclick="close_alert()"><img src="img/pop_close.png" alt=""></a></span>
+            </div>
+        </div>
+    </div>
+    <ul class="q_menu">
+        <li><a href="#sec01" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)" class="active"><img src="img/wft/q_menu01_on.png" alt=""></a></li>
+        <li><a href="#sec02" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/q_menu02_off.png" alt=""></a></li>
+        <li><a href="#sec03" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/q_menu03_off.png" alt=""></a></li>
+        <li><a href="#wrap" onmouseover="ch_png_on(this)" onmouseout="ch_png_off(this)"><img src="img/wft/top_off.png" alt=""></a></li>
+    </ul>
+</body>
+</html>

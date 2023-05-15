@@ -1,0 +1,57 @@
+<%include head.ejs%>
+<div class="con_wrap">
+    <h1><%= title %></h1>
+    <h2>남자는 핑크지</h2>
+    <p>Node Test Page By <%= name%></p>
+    <form action="/write" method="post" onsubmit="return onWriteSubmit()">
+        <table class="board_list">
+            <colgroup>
+                <col width="30%"></col>
+                <col width="*"></col>
+            </colgroup>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="creator_id" id="creator_id" maxlength="10" required/></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name" id="name" maxlength="10" required/></td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td><input type="password" name="passwd" id="passwd" maxlength="10" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                <button type="submit">회원가입</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<script>
+function onWriteSubmit(){
+    if ( $("#creator_id").val().trim() == "" ){
+        var message = "아이디를 입력해 주세요";
+        $("#creator_id").val("");
+        $("#creator_id").focus();
+        alert(message);
+        return false;
+    }if ( $("#title").val().trim() == "" ){
+        var message = "제목을 입력해 주세요";
+        $("#title").val("");
+        $("#title").focus();
+        alert(message);
+        return false;
+    }if ( $("#passwd").val().trim() == "" ){
+        var message = "패스워드를 입력해 주세요";
+        $("#passwd").val("");
+        $("#passwd").focus();
+        alert(message);
+        return false;
+    }
+}
+</script>
+<%include foot.ejs%>
+

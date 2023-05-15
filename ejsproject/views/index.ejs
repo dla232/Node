@@ -1,0 +1,105 @@
+<%include head.ejs%>
+<script>
+$(function(){
+    date_now();
+/* Ajax 로 통신해서 맞는지 경고창 처리
+   $.ajax({
+        url: "/login",
+        dataType: "json",
+        type: "POST",
+        data:$('#login_form').serialize(),
+        success: function(data) {
+            alert('callback : ' + data.message);
+        },
+        error: function() {
+            alert("err");
+        }
+    })
+*/
+});
+</script>
+<style>
+    .test{width:400px; height:400px; background-color:orange; border-radius:200px; margin:0 auto; animation-name:move; animation-duration:5s;animation-iteration-count: infinite;animation-timing-function: linear;}
+    .test span{width:200px; height:200px; background-color:blue; margin:0 auto; display:block; border-radius:50%;}
+    .test span em{width:50px; height:50px; background-color:red; margin:0 auto; display:block; border-radius:50%; animation-name:move2; animation-duration:1000s; animation-iteration-cout:infinite; animation-timing-funtion:linear;}
+    @keyframes move{
+        from{
+            transform:rotate(0deg);
+        }to{
+            transform:rotate(360deg);
+        }
+    }
+    
+    @keyframes move2{
+        from{
+            tansform:rotate(0deg);
+        }to{
+            tansform:rotate(30060deg);
+        }
+    }
+    .join_time{color:blue; font-size:35px; font-weight:bold;}
+    .join_time span{color:#000;}
+</style>
+<div class="con_wrap">
+    <h1 style="font-size:50px;"><%= title %> Ajax 호출 테스트 - Ejs / Vue</h1>
+    <p>Node Test Page By <%= name%> <%=message%></p>
+    <p class="join_time">접속한 시간 : <span></span></p>
+    <form id="login_form" action="/login" method="post">
+        <div class="login_form">
+            <h2>Welecom Test Node</h2>
+            <ul class="login_input">
+                <li><label for="user_id">아이디</label><input type="text" id="user_id" name="user_id"/></li>
+                <li><label for="user_password">비밀번호</label><input type="password" id="user_password" name="user_password"/></li>
+            </ul>
+            <div class="btn_wrap">
+                <!--<span><a href="/users">회원리스트</a></span>-->
+                <span><a href="#a" onclick="login_click()">로그인</a></span>
+                <span><a href="/write">가입하기</a></span>
+            </div>
+        </div>
+    </form>
+    <div class="test">
+        <span><em></em></span>
+    </div>
+</div>
+<script>
+function login_click(){
+    if($("#user_id").val().trim() == ""){
+        var message = "아이디를 입력해 주세요";
+        $("#user_id").val("");
+        $("#user_id").focus();
+        alert(message);
+        return false;
+    }if ( $("#user_password").val().trim() == "" ){
+        var message = "패스워드를 입력해 주세요";
+        $("#user_password").val("");
+        $("#user_password").focus();
+        alert(message);
+        return false;
+    };
+    $("#login_form").submit();
+}
+function date_now(){
+    var a = new Date();
+    a = getFormatDate(a);
+    $(".join_time span").text(a);
+    /*setTimeout(date_now,1000);*/
+}
+function getFormatDate(date){ 
+    var year = date.getFullYear();	//yyyy 
+    var month = (1 + date.getMonth());	//M 
+    month = month >= 10 ? month : '0' + month;	//month 두자리로 저장 
+    var day = date.getDate();	//d 
+    var hours = date.getHours();	//d 
+    var minutes = date.getMinutes();	//d 
+    day = day >= 10 ? day : '0' + day;	//day 두자리로 저장 
+    if(hours > 12){
+        var time_h = "오후 " + (hours-12);
+    }else{
+        var time_h = "오전 " + hours;
+    }
+    return year + '-' + month + '-' + day + " / " + time_h + "시" + minutes +"분";  
+}
+
+</script>
+<%include foot.ejs%>

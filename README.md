@@ -10,3 +10,7 @@ Socket - Node 소캣 통신으로 랜덤 채팅
 ##
 Webpack-set - webpack 환경 설정으로 TF 프로젝트 자동 이미지 해시 처리 및 특정 해시 붙이지 않는 기능.
 ##
+
+# 주소
+http://dla232.dothome.co.kr/
+http://dla232.dothome.co.kr/portfolio.html

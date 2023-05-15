@@ -164,9 +164,12 @@
             <td>Webpack / JavaScript</td>
         </tr>
     </table>
-    <ul style="margin-bottom:100px;">
+    <ul>
         <li>진행 한 프로젝트양이 생각보다 많아 최근 진행 프로젝트와 기억에 남는 프로젝트 위주로 작성하였습니다.</li>
     </ul>
+
+    <p>포트 폴리오 : <a href="http://dla232.dothome.co.kr/portfolio.html" target="_blank">http://dla232.dothome.co.kr/portfolio.html</a></p>
+    <p style="margin-bottom:100px;">Github : <a href="https://github.com/dla232" target="_blank">https://github.com/dla232</a></p>
     
     
 </div>
@@ -218,5 +221,6 @@
       max-height: 600px;
       margin-bottom: 20px;
     }
-    
+    p{width:100%; float:left; margin:10px 0; }
+    p a{color:#333;}
 </style>

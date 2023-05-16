@@ -8,10 +8,10 @@ ejsproject - Node BackEnd Nodeejs 페이지로 node express 서버 구동 하여
 ##
 Socket - Node 소캣 통신으로 랜덤 채팅
 ##
-Webpack-set - webpack 환경 설정으로 TF 프로젝트 자동 이미지 해시 처리 및 특정 해시 붙이지 않는 기능.
+Webpack-set - webpack 환경 설정으로 TF 프로젝트 자동 이미지 해시 처리 및 특정 해시 붙이지 않는 기능.(HTML , React 두 작업 모두 적용)
 ##
 
-# 주소
+# Svelte 딸아이 정보 페이지 주소
 http://dla232.dothome.co.kr/
-#
+# 포트폴리오 주소
 http://dla232.dothome.co.kr/portfolio.html

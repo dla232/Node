@@ -6,7 +6,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <img src="/char03.png" alt="Landscape picture"/>
         <h1>Front Server AWS Test Page</h1>
-        <p>무중단 배포 완료</p>
+        <p>무중단 배포 완료22</p>
     </main>
   )
 }

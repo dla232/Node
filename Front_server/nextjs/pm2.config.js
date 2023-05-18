@@ -3,6 +3,7 @@ module.exports = {
       {
         name: 'FE_server',
         script: 'app.js', // 애플리케이션의 진입점 파일
+        args: '--update-env', // 서버 중단 방지
         instances: 'max', // 인스턴스 수 (여러 대의 서버에서 실행하는 경우)
         exec_mode: 'cluster', // 클러스터 모드 (여러 인스턴스 실행)
         autorestart: true, // 자동 재시작 설정

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <img src="/char03.png" alt="Landscape picture"/>
-        <h1>Front Server AWS Test Page</h1>
+        <h1>Front Server AWS Test Page2</h1>
     </main>
   )
 }

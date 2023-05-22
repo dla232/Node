@@ -17,7 +17,7 @@ module.exports = {
     deploy: {
       production: {
         user: 'rapid',
-        host: '52.79.239.204',
+        host: '52.79.239.204', //서버 Host DNS나 IP주소 입력
         ref: 'origin/main', // 원하는 브랜치를 지정하세요
         repo: 'git@github.com:dla232/node.git', // 프로젝트의 Git 저장소
         path: '/Node/Front_server/nextjs', // 프로젝트의 경로

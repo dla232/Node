@@ -7,6 +7,7 @@ export default function Home() {
         <img src="/char03.png" alt="Landscape picture"/>
         <h1>Front Server AWS Test Page</h1>
         <p>무중단 배포 완료2332</p>
+        <p>커밋 테스트</p>
     </main>
   )
 }

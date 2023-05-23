@@ -16,12 +16,12 @@ module.exports = {
     ],
     deploy: {
       production: {
-        user: 'rapid',
-        host: '52.79.239.204', //서버 Host DNS나 IP주소 입력
-        ref: 'origin/main', // 원하는 브랜치를 지정하세요
+        user: 'rapid', // 서버 접속 계정
+        host: '52.79.239.204', // 서버 Host DNS나 IP주소 입력
+        ref: 'origin/main', // 배포할 브랜치
         repo: 'git@github.com:dla232/node.git', // 프로젝트의 Git 저장소
         path: '/Node/Front_server/nextjs', // 프로젝트의 경로
-        'post-deploy': 'npm install && pm2 reload pm2.config.js --env production',
+        'post-deploy': 'npm install && pm2 reload pm2.config.js --env production', // 배포 후 실행할 명령어
       },
     },
   };

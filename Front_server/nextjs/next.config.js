@@ -6,13 +6,9 @@ const nextConfig = {
         loader: 'default',
     },
     webpack(config) {
-      config.module.rules.push({
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'static/images/[name].[hash][ext]',
-        },
-      });
+      config.server = {
+        port: 8080,
+      };
       return config;
     },
 }

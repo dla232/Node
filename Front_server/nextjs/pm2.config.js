@@ -10,6 +10,7 @@ module.exports = {
         watch: true, // 파일 변경 감지 설정
         max_memory_restart: '1G', // 메모리 한도를 초과하면 재시작
         env: {
+          PORT:8080,
           NODE_ENV: 'production',
         },
       },

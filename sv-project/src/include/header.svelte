@@ -57,5 +57,5 @@
     <img src="{src}" alt="">
 </div>
 <style>
-    .visual_wrap{width:100%; height:745px; position:relative; float:left; overflow:hidden;}
+    .visual_wrap{width:100%; height:745px; position:relative; float:left; overflow:hidden; display:flex; justify-content: center;}
 </style>

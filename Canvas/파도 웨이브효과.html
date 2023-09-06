@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{margin:0; padding:0;}
+  body{position:relative; width:100%; overflow:hidden;}
+  canvas {
+    width:1920px; height:1085px; position:absolute; left:50%; top:0; transform:translateX(-50%);
+  }
+</style>
+<script src="rapid_vw_min.js"></script>
+<title>Canvas Image Wave Effect</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="1920" height="1085"></canvas>
+  <script>
+	  // 사용법
+    var param = {
+      container: document.getElementById('myCanvas'), // 해당 캔버스 ID
+      backgroundImage: "https://lwi.nexon.com/m_counterside/event/2021/0803/sec06_bg.png", // 이미지 경로
+      waveSpeed: 0.002, // 웨이브 속도
+      waveAmplitude: 5, // 웨이브 진폭
+      waveFrequency: 0.01 // 웨이브 주기
+    };
+    rapid_wv(param);
+  </script>
+</body>
+</html>

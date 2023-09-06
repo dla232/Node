@@ -154,7 +154,7 @@
         <tr>
             <td>IRENE</td>
             <td>TF 업무 타 부서 Vue 프로젝트 업무 지원요청</td>
-            <td>해당 IRENE 프로젝트 Vue 플러그인 사용으로 인한 Component 분리 및 가이드 작업</td>
+            <td>해당 IRENE 프로젝트 Vue 프레임워크 사용으로 인한 Component 분리 및 가이드 작업</td>
             <td>Vue / CSS / JavaScript</td>
         </tr>
         <tr>
@@ -165,6 +165,7 @@
         </tr>
     </table>
     <ul>
+        <li>그외 다수 공공기관 작업 및 넥슨코리아 라이브 게임 웹 사이트 리뉴얼 및 이벤트 진행.</li>
         <li>진행 한 프로젝트양이 생각보다 많아 최근 진행 프로젝트와 기억에 남는 프로젝트 위주로 작성하였습니다.</li>
     </ul>
 

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript" src="https://lwi.nexon.com/js/heroes/common/jquery-3.2.0.min.js"></script>
+  <title>movie_test</title>
+  <style>
+  *{margin:0; padding:0;}
+  #wrap{width:100%; height:100%;}
+  h1{color:#000; font-size:30px; width:100%; text-align:center; float:left;}
+  .mv_wrap{width:960px; height:540px; float:left; margin-left:50%; transform:translateX(-50%); margin-top:50px;}
+  .mv_wrap video{width:100%; height:100%; float:left; }
+  #time_txt{width:100%; float:left; text-align:center; margin-top:10px;}
+  </style>
+  <script>
+  const startTime = new Date();
+  function time(){
+	 const loadTime = (new Date() - startTime) / 1000; // 로딩 시간 (초)
+	 $("#time_txt").text(loadTime+"초");
+  }
+  </script>
+ </head>
+ <body>
+	<div id="wrap">
+		<h1>Movie Test (Video)</h1>
+		<div class="mv_wrap">
+			<video src="https://lwi.nexon.com/test/01.mp4" autoplay="true" muted="true" controls="false" onloadeddata="time()"></video>
+		</div>
+		<p id="time_txt"></p>
+	</div>
+  
+ </body>
+</html>

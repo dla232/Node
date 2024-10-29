@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+
+    @keyframes neon-animation {
+      0% {
+        background-position-x: 0;
+      }
+      100% {
+        background-position-x: -1000px;
+      }
+    }
+
+    .neon-text {
+      width: 100%;
+      text-align: center;
+      /* 텍스트 내부에 그라데이션 적용 */
+      background: -webkit-linear-gradient(left, #ff00e0, #00ffea, #fffb00, #ff8300, #ff004f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: #000;
+      font-size: 148px;
+      font-weight: bold;
+      animation: neon-animation 3s linear infinite alternate;
+      /* 텍스트 윤곽에 그라데이션 적용 */
+      -webkit-text-stroke: 5px transparent;
+      text-stroke: 5px transparent;
+	  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 
+                   0 0 10px rgba(255, 255, 255, 0.2), 
+                   0 0 15px rgba(255, 255, 255, 0.2), 
+                   0 0 20px rgba(255, 255, 255, 0.2);
+		}
+    }
+  </style>
+ </head>
+ <body>
+  <p class="neon-text">HELLO WORLD</p>
+ </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        let recognition;
+        function startRecognition() {
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US'; // 언어 설정 (예: 'en-US', 'ko-KR')
+            recognition.onstart = function() {
+                console.log('Listening...');
+            };
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase();
+                document.getElementById('output').textContent = transcript;
+                // "자비스"가 포함되어 있는지 확인
+                if (transcript.includes('자비스')) {
+                    // "자비스"가 포함되어 있으면 음성 인식 시작
+                    startListening();
+                }
+            };
+            recognition.start();
+        }
+        function startListening() {
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US'; // 언어 설정 (예: 'en-US', 'ko-KR')
+
+            recognition.onstart = function() {
+                console.log('Listening...');
+            };
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase();
+                document.getElementById('output').textContent = transcript;
+            };
+            recognition.start();
+        }
+        // 페이지가 로드될 때 음성 인식이 자동으로 시작되도록 설정
+        window.onload = function() {
+            startRecognition();
+        };
+    </script>
+</body>
+</html>

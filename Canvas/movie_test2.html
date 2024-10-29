@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="https://lwi.nexon.com/js/heroes/common/jquery-3.2.0.min.js"></script>
+  <title>Canvas Video Processing</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    #wrap { width: 100%; height: 100%; }
+    h1 { color: #000; font-size: 30px; width: 100%; text-align: center; float: left; }
+    .mv_wrap { width: 2560px; height: 1440px; float: left; margin-left: 50%; transform: translateX(-50%); margin-top: 50px; }
+    canvas { width: 100%; height: 100%; float: left; }
+    #time_txt { width: 100%; float: left; text-align: center; margin-top: 10px; }
+  </style>
+ </head>
+ <body>
+  <div id="wrap">
+    <h1>Canvas Video Processing</h1>
+    <div class="mv_wrap">
+      <canvas id="videoCanvas"></canvas>
+    </div>
+    <p id="time_txt"></p>
+  </div>
+  <script>
+    const videoCanvas = document.getElementById('videoCanvas');
+    const ctx = videoCanvas.getContext('2d');
+    const video = document.createElement('video');
+    video.src = '1.mp4'; // 비디오 파일 경로
+    video.muted = true; // 음소거 설정
+    const startTime = new Date();
+	let t_flag = true;
+    video.addEventListener('canplay', function() {
+      videoCanvas.width = video.videoWidth;
+      videoCanvas.height = video.videoHeight;
+	  if(t_flag == true){
+		t_flag = false;
+		const loadTime = (new Date() - startTime) / 1000;
+        $("#time_txt").text(loadTime + "초");
+	  }
+      video.play(); // 비디오 재생
+      if (video.played) {
+      }
+      function drawFrame() {
+		if (video.paused || video.ended) {
+			video.currentTime = 0;
+			video.play();
+		}
+        ctx.drawImage(video, 0, 0, videoCanvas.width, videoCanvas.height);
+        requestAnimationFrame(drawFrame);
+      }
+      drawFrame();
+    });
+  </script>
+ </body>
+</html>

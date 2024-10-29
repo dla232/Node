@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{margin:0; padding:0;}
+  body{position:relative; width:100%; overflow:hidden; background-color:#222;}
+  p{color:#fff; font-size:30px;}
+  canvas {
+    width:1524px; height:1137px; position:absolute; left:50%; top:0; transform:translateX(-50%);
+  }
+  button {
+    display: block;
+    margin-top: 10px;
+  }
+  input[type="number"] {
+    width: 100px;
+  }
+</style>
+<title>Canvas Image Sequence Effect</title>
+</head>
+<body>
+  <p>Canvas Test</p>
+  <canvas id="myCanvas" width="1524" height="1137"></canvas>
+  <button id="startButton">Start</button>
+  <button id="stopButton">Stop</button>
+  <input type="number" id="frameNumber" placeholder="프레임 번호">
+  <button id="goToFrameButton">프레임으로 이동</button>
+  <button id="reverseButton">Reverse</button>
+  <button onclick="get_num()">지금 프레임 값(console확인)</button>
+  <p id="currentFrame">현재 프레임 : 0</p>
+  <script src="https://lwi.nexon.com/test/lottie/apng/js/rapid_img_min.js"></script>
+  <script>
+    var param = {
+      container: document.getElementById('myCanvas'),
+      path: "https://lwi.nexon.com/webdev/cut/",
+      count: 51,
+      exe: ".png",
+      frameRate: 30,
+      auto: true, // 자동 재생 옵션
+      reverse: false, // 역방향 애니메이션 옵션
+    };
+    rapid_img(param);
+    //현재 프레임 값을 얻는 함수는 getCurrentFrame() 이다 함수를 사용해서 해당 값으로 다른 처리 가능하다.
+  </script>
+</body>
+
+</html>

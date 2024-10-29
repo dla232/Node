@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture and Download</title>
+    <style>
+        .cap {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 20px;
+			background-color:red;html2canvas(captureArea, {
+    onrendered: function(canvas) {
+        // Canvas를 이미지로 변환하여 다운로드합니다.
+        const link = document.createElement('a');
+        link.download = 'captured_image.png'; // 파일명 설정
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
+});
+        }
+    </style>
+</head>
+<body>
+    <div class="cap">
+        <!-- cap 클래스 안에 포함될 내용 -->
+        <h2>This is a heading</h2>
+        <p>This is a paragraph.</p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+    <button onclick="captureAndDownload()">Download Image</button>
+
+    <script>
+        function captureAndDownload() {
+            // cap 클래스를 가진 div 요소를 선택합니다.
+            const captureArea = document.querySelector('.cap');
+
+            // cap 클래스를 가진 div 요소의 크기를 가져옵니다.
+            const width = captureArea.offsetWidth;
+            const height = captureArea.offsetHeight;
+
+            // Canvas를 생성합니다.
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+
+            // cap 클래스를 가진 div 요소를 Canvas에 그립니다.
+           html2canvas(captureArea, {
+			onrendered: function(canvas) {
+				// Canvas를 이미지로 변환하여 다운로드합니다.
+				const link = document.createElement('a');
+				link.download = 'captured_image.png'; // 파일명 설정
+				link.href = canvas.toDataURL('image/png');
+				link.click();
+			}
+});
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Light Effect</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+	.card_con{
+	  perspective: 600px;
+	  transform-origin:center;
+	}
+    .card {
+      width: 300px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      transform-style: preserve-3d;
+    }
+    .card img {
+      width: 100%;
+    }
+    .light {
+      mask-image: url("https://poke-holo.b-cdn.net/foils/swsh12/masks/upscaled/085_foil_holo_reverse_2x.webp");
+      -webkit-mask-image: url("https://poke-holo.b-cdn.net/foils/swsh12/masks/upscaled/085_foil_holo_reverse_2x.webp");
+      mask-size: cover;
+      -webkit-mask-size: cover;
+      mask-position: center center;
+      -webkit-mask-position: center center;
+      background-image: 
+        radial-gradient(
+          circle at 0 0,
+          #fff 5%, 
+          #000 50%, 
+          #fff 80% 
+        ),
+        linear-gradient(
+          -45deg,
+          #000 15%,
+          #fff,
+          #000 85%
+        ),
+        url("https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/085_foil_holo_reverse_2x.webp");
+      background-blend-mode: soft-light, difference;
+      mix-blend-mode: color-dodge;
+      background-position: center center;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      transition: transform 0.1s, opacity 0.3s;
+      opacity: 0;
+      top: 0;
+      left: 0;
+	  /*filter:brightness(0.55) contrast(1.5) saturate(1);*/
+    }
+  </style>
+</head>
+<body>
+<div class="card_con">
+	<div class="card" onmousemove="tiltCard(event)" onmouseleave="resetCard()" id="card_wrap">
+	  <img src="https://images.pokemontcg.io/swsh12/85_hires.png" alt="Pokemon Card" id="cardImage">
+	  <div class="light" id="light"></div>
+	</div>
+</div>
+
+<script>
+  const card = document.getElementById('card_wrap');
+  const light = document.getElementById('light');
+  function tiltCard(event) {
+    const boundingRect = card.getBoundingClientRect();
+    const offsetX = event.clientX - boundingRect.left;
+    const offsetY = event.clientY - boundingRect.top;
+    const rotateX = (offsetY - boundingRect.height / 2) / 8;
+    const rotateY = (offsetX - boundingRect.width / 2) / 8;
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+    light.style.opacity = '1';
+    light.style.backgroundImage = `radial-gradient(
+          circle at ${offsetX}px ${offsetY}px,
+          #fff 5%, 
+          #000 50%, 
+          #fff 80% 
+        ),
+        linear-gradient(
+          -45deg,
+          #000 15%,
+          #fff,
+          #000 85%
+        ),
+        url("https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/085_foil_holo_reverse_2x.webp")`;
+  }
+  function resetCard() {
+    card.style.transform = 'rotateX(0) rotateY(0)';
+    light.style.opacity = '0';
+  }
+</script>
+</body>
+</html>

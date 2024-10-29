@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  </head>
+  <style>
+    
+    #video{
+      position: absolute;
+      top:0;
+      left:0;
+      width: 400px;
+
+    }
+
+    #c1{
+      position: absolute;
+      top: 0;
+      left: 5px;
+      border:1px solid red;
+
+    }
+
+    #c2 {
+      background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 1010px;
+      border:1px solid #000;
+    }
+
+    div {
+      position: absolute;
+      top:0;
+      left:400px;
+      transform: scale(0.6);
+
+    } 
+  </style>
+  <body onload="processor.doLoad()">
+
+    <div>
+      <canvas id="c1" width="2560" height="1440" ></canvas>
+    </div>
+    <video id="video" loop src="1.mp4" controls="true"></video>
+    <script type="text/javascript" src="video_test.js"></script>
+  </body>
+</html>
